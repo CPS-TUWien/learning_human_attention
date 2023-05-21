@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this data and code, please cite it as below."
+authors:
+- family-names: "Daniel"
+  given-names: "Scheuchenstuhl"
+  orcid: "https://orcid.org/0009-0000-6080-2898"
+- family-names: "Stefan"
+  given-names: "Ulmer"
+  orcid: "https://orcid.org/0009-0009-7654-7743"
+- family-names: "Felix"
+  given-names: "Resch"
+  orcid: "https://orcid.org/0009-0004-3240-3725"
+- family-names: "Luigi"
+  given-names: "Berducci"
+  orcid: "https://orcid.org/0000-0002-3497-6007"
+- family-names: "Radu"
+  given-names: "Grosu"
+  orcid: "https://orcid.org/0000-0001-5715-2142"
+title: "Enhancing Robot Learning through Learned Human-Attention Feature Maps"
+date-released: 2023-05-29
+url: "https://github.com/CPS-TUWien/learning_human_attention"

@@ -1,15 +1,66 @@
-# learning_human_attention
-Repository of the work "Enhancing Robot Learning through Learned Human-Attention Feature Maps".
+# Learning Human Attention
+This is the repository of the work "Enhancing Robot Learning through Learned Human-Attention Feature Maps".
 
-The docker image of our preprocessing pipeline is provided on Dockerhub and can be downloaded using the following command:
+We provide instruction to work with the experimental data recorded in
+driving tasks with F1TENTH miniature vehicles.
 
-sudo docker pull cyberwyrm/eye-tracking_pipeline:latest
+![experimental setup](docs/exp-setup.png)
 
-To build and run the container, execute the following commands using the synopsis below:
+# Download the raw dataset
 
-sudo docker build -t cyberwyrm/eye-tracking_pipeline .
+The recorded data are freely available on Zenodo at [put-here-link](put-here-link).
 
-sudo docker run -v <raw_data_src_path_host_abs>:/raw_data/dataset -it eye-tracking_pipeline:latest
+We describe in the following the data content, its organization 
+and report the instruction to download them.
 
-<raw_data_src_path_host_abs> refers to the absolute path on the host file system where the raw data to be processed is located. The preprocessed data is then stored along each run's folder and given by 
-the marked_frames directory which contains all images and the transformed_coords.csv file which contains the attention information for each corresponding frame.
+
+
+# Preprocess the data
+
+To process the raw data and map the focus points from the eye-tracking systems
+into the view from the on-board camera, we perform a coordinate projection.
+
+To reproduce the preprocessing, we provide the following docker image `cyberwyrm/eye-tracking_pipeline`.
+
+![docker image](docs/docker-img.png)
+
+
+### Instructions
+
+1. Pull the docker image from Dockerhub
+```
+docker pull cyberwyrm/eye-tracking_pipeline:latest
+```
+
+2. Build the docker container
+```
+docker build -t cyberwyrm/eye-tracking_pipeline .
+```
+
+3. Run the container from the folder containing the dataset (_see instructions above to download the data_)
+```
+cd <path-to-dataset-folder>
+docker run --rm -it -v $(pwd):/raw_data/dataset eye-tracking_pipeline:latest
+```
+
+where `<path-to-dataset-folder>` is the path on the host file system where the raw data are located. 
+
+### Output description
+
+The output of the processing pipeline is produced and stored for each run in the relative folder. 
+The output consists of:
+- `marked_frames` directory: contains all frame images,
+- `transformed_coords.csv` file: contains the focus points for each frame.
+
+# Citation
+If you find this work useful for your own ideas, please cite our paper:
+
+```
+@online{scheuchenstuhl2023enhancing,
+    title={Enhancing Robot Learning through Learned Human-Attention Feature Maps}, 
+    author={Daniel Scheuchenstuhl and Stefan Ulmer and Felix Resch and Luigi Berducci and Radu Grosu},
+    booktitle = {Workshop on effective Representations, Abstractions, and Priors for Robot Learning (ICRA 2023)},
+    year={2023}
+}
+```
+
