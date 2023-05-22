@@ -10,13 +10,13 @@ driving tasks with F1TENTH miniature vehicles.
 The recorded data are freely available on [Zenodo](https://doi.org/10.5281/zenodo.7897588).
 
 The downloads on Zenodo are different runs on the same track: [Getreidemarkt](https://www.tuwien.at/tu-wien/organisation/zentrale-bereiche/gebaeude-und-technik/veranstaltungsservice-und-lehrraumsupport/raumdatenbank/hoersaele/gm-8-9)
-They are uploaded in different .zip files for a better download-coordination.
-Each of the .zip files represents a single run, where each of the runs contains the following files:
-- A .bag file that contains all the ROS-messages recorded on the car during driving on the track.
-- A .cal file that contains the calibration information of the user that was wearing the [VPS](https://viewpointsystem.com/en/) glasses for the run
-- A .tsv file that contains all human attention gaze points for a specific frame
-- Two video files (.mkv and .mp4) recorded via webcam on the car during driving on the track
-- .yaml file containing the information of valid sections of the run (necessary for the pipeline processing described below)
+They are uploaded in different `.zip` files for a better download-coordination.
+Each of the `.zip` files represents a single run, where each of the runs contains the following files:
+- A `.bag` file that contains all the ROS-messages recorded on the car during driving on the track.
+- A `.cal` file that contains the calibration information of the user that was wearing the [VPS](https://viewpointsystem.com/en/) glasses for the run
+- A `.tsv` file that contains all human attention gaze points for a specific frame
+- Two video files (`.mkv` and `.mp4`) recorded via webcam on the car during driving on the track
+- `.yaml` file containing the information of valid sections of the run (necessary for the pipeline processing described below)
 
 
 # Preprocess the data
@@ -47,8 +47,8 @@ where `<path-to-dataset-folder>` is the absolute path on the host file system wh
 
 The output of the processing pipeline is produced and stored for each run in the relative folder. 
 The output consists of:
-- `marked_frames` directory: contains all frame images,
-- `transformed_coords.csv` file: contains the focus points for each frame.
+- `marked_frames/`: contains all frame images,
+- `transformed_coords.csv`: contains the focus points for each frame.
 
 # Citation
 If you find this work useful for your own ideas, please cite our paper:
