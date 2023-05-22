@@ -7,12 +7,16 @@ driving tasks with F1TENTH miniature vehicles.
 ![experimental setup](docs/exp-setup.png)
 
 # Download the raw dataset
+The recorded data are freely available on [Zenodo](https://doi.org/10.5281/zenodo.7897588).
 
-The recorded data are freely available on Zenodo at [put-here-link](put-here-link).
-
-We describe in the following the data content, its organization 
-and report the instruction to download them.
-
+The downloads on Zenodo are different runs on the same track: [Getreidemarkt](https://www.tuwien.at/tu-wien/organisation/zentrale-bereiche/gebaeude-und-technik/veranstaltungsservice-und-lehrraumsupport/raumdatenbank/hoersaele/gm-8-9)
+They are uploaded in different .zip files for a better download-coordination.
+Each of the .zip files represents a single run, where each of the runs contains the following files:
+- A .bag file that contains all the ROS-messages recorded on the car during driving on the track.
+- A .cal file that contains the calibration information of the user that was wearing the [VPS](https://viewpointsystem.com/en/) glasses for the run
+- A .tsv file that contains all human attention gaze points for a specific frame
+- Two video files (.mkv and .mp4) recorded via webcam on the car during driving on the track
+- .yaml file containing the information of valid sections of the run (necessary for the pipeline processing described below)
 
 
 # Preprocess the data
