@@ -1,0 +1,12 @@
+bag: 20220412_0007.bag
+sections:
+- start: 2260
+  stop: 11400
+sync:
+- video: 1071
+  vps_video: 210
+video: rawdata_20220412_0007.mp4
+vps:
+  calibration: 20220412_0007.cal
+  data: 20220412_0007.tsv
+  video: 20220412_0007.mp4
