@@ -32,18 +32,12 @@ To reproduce the preprocessing, we provide the following docker image `cyberwyrm
 docker pull cyberwyrm/eye-tracking_pipeline:latest
 ```
 
-2. Build the docker container
+2. Run the container from the folder containing the dataset (_see instructions above to download the data_)
 ```
-docker build -t cyberwyrm/eye-tracking_pipeline .
-```
-
-3. Run the container from the folder containing the dataset (_see instructions above to download the data_)
-```
-cd <path-to-dataset-folder>
-docker run --rm -it -v $(pwd):/raw_data/dataset eye-tracking_pipeline:latest
+docker run -v <path-to-dataset-folder>:/raw_data/dataset --name eye-tracking_pipeline cyberwyrm/eye-tracking_pipeline:latest
 ```
 
-where `<path-to-dataset-folder>` is the path on the host file system where the raw data are located. 
+where `<path-to-dataset-folder>` is the absolute path on the host file system where the raw data are located. 
 
 ### Output description
 
