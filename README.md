@@ -6,14 +6,21 @@ driving tasks with F1TENTH miniature vehicles.
 
 ![experimental setup](docs/exp-setup.png)
 
+The paper has been accepted at 
+the Workshop on effective Representations, Abstractions, and Priors for Robot Learning 
+([RAP4Robots](https://sites.google.com/view/rap4robots)).
+A preprint is available [here](https://drive.google.com/file/d/1vSq1PLrVwEk-1Cpfr3J6dy2G1mv9B8df).
+
 # Download the raw dataset
 The recorded data are freely available on [Zenodo](https://doi.org/10.5281/zenodo.7897588).
 
-The downloads on Zenodo are different runs on the same track: [Getreidemarkt](https://www.tuwien.at/tu-wien/organisation/zentrale-bereiche/gebaeude-und-technik/veranstaltungsservice-und-lehrraumsupport/raumdatenbank/hoersaele/gm-8-9)
-They are uploaded in different `.zip` files for a better download-coordination.
-Each of the `.zip` files represents a single run, where each of the runs contains the following files:
+Each file `.zip` corresponds to a run on the track we built for the experiments at TU Wien.
+In each run, we asked a human driver to control the vehicle remotely
+while wearing [VPS](https://viewpointsystem.com/en/) glasses to track the eye gaze. 
+
+The content of each archive contains the following files:
 - A `.bag` file that contains all the ROS-messages recorded on the car during driving on the track.
-- A `.cal` file that contains the calibration information of the user that was wearing the [VPS](https://viewpointsystem.com/en/) glasses for the run
+- A `.cal` file that contains the calibration information of the user that was wearing the VPS glasses for the run
 - A `.tsv` file that contains all human attention gaze points for a specific frame
 - Two video files (`.mkv` and `.mp4`) recorded via webcam on the car during driving on the track
 - `.yaml` file containing the information of valid sections of the run (necessary for the pipeline processing described below)
